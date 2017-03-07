@@ -1,10 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.lazyload.min.js"></script>
+
 </head>
 <body>
-	<h1>hello world</h1>
+    <div class="box">
+      ss
+    </div>
+    <img class="lazy" src="img/1.png" width="640" height="680" >
+    <img class="lazy" src="img/2.png" width="640" height="680" >
+    <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>
+    <img class="lazy" src="img/3.png" width="640" height="680" >
+    <script>
+        $(function() {
+            $("img.lazy").lazyload({
+                event : "click",
+                failure_limit : 10
+            });
+        });
+
+        $(window).bind("load", function() {
+            var timeout = setTimeout(function() { $("img.lazy").trigger("sporty") }, 5000);
+        });
+    </script>
 </body>
 </html>
